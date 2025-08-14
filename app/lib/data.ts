@@ -20,6 +20,7 @@ export async function fetchRevenue() {
     // await new Promise((resolve) => setTimeout(resolve, 3000));
 
     const data = await sql<Revenue[]>`SELECT * FROM revenue`;
+    // console.log('data fetched' , data);
 
     // console.log('Data fetch completed after 3 seconds.');
 
@@ -113,6 +114,7 @@ export async function fetchFilteredInvoices(
       ORDER BY invoices.date DESC
       LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
     `;
+    // console.log(invoices);
 
     return invoices;
   } catch (error) {
